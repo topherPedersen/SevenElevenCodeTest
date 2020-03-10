@@ -22,6 +22,8 @@ import {
   ACCESS_TOKEN 
 } from '../apikey.js';
 
+import Movie from './Movie';
+
 // Redux
 import { connect } from 'react-redux';
 import { ADD_TOP_MOVIES } from '../actions/types';
@@ -96,7 +98,7 @@ class TopMovies extends React.Component {
         <FlatList
           data={this.props.topMovies} 
           renderItem={ ({item}) => 
-            <Text>{item.title}</Text>
+            <Movie title={item.title} />
           }
           keyExtractor={ item => item.id } />
 
