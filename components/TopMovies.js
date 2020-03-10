@@ -30,6 +30,10 @@ class TopMovies extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.fetchMovieData();
+  }
+
   fetchMovieData() {
 
     let topMovies;
