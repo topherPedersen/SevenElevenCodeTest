@@ -16,8 +16,6 @@ import { connect } from 'react-redux';
 import { 
   POPULATE_LIST_OF_TOP_MOVIES,
   TOGGLE_FAVORITE,
-  ADD_MOVIE_TO_FAVORITES,
-  REMOVE_MOVIE_FROM_FAVORITES,
 } from '../actions/types';
 
 // Shorten Title Utility
@@ -57,15 +55,12 @@ class Movie extends React.Component {
 
 const mapStateToProps = (state) => {
   return { 
-    topMovies: state.topMoviesStore.topMovies,
-    favoriteMovies: state.favoriteMoviesStore.favoriteMovies,
+    topMovies: state.topMovies,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     toggleFavorite: (payload) => dispatch({type: TOGGLE_FAVORITE, payload: payload}),
-    addMovieToFavorites: (payload) => dispatch({type: ADD_MOVIE_TO_FAVORITES, payload: payload}),
-    removeMovieFromFavorites: (payload) => dispatch({type: REMOVE_MOVIE_FROM_FAVORITES, payload: payload}),
   };
 };
 

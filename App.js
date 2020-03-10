@@ -18,17 +18,15 @@ import {
 
 // Redux Actions & Reducers
 // import addTopMoviesReducer from './reducers/addTopMoviesReducer';
-import rootReducer from './reducers';
+import movieReducer from './reducers/movieReducer';
 import { 
   POPULATE_LIST_OF_TOP_MOVIES, 
   TOGGLE_FAVORITE,
-  ADD_MOVIE_TO_FAVORITES, 
-  REMOVE_MOVIE_FROM_FAVORITES 
 } from './actions/types';
 
 import TopMovies from './components/TopMovies';
 
-const store = createStore(rootReducer);
+const store = createStore(movieReducer);
 
 class App extends React.Component {
   constructor(props) {

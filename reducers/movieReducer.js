@@ -9,7 +9,7 @@ const initialState = {
 
 // The populateListOfTopMoviesReducer handles updating our redux store
 // whenever we receive new movie data from the the API. 
-const populateListOfTopMoviesReducer = (state, action) => {
+const movieReducer = (state, action) => {
 
   // check for state undefined to prevent 
   // redux from crashing app on load
@@ -44,4 +44,4 @@ const populateListOfTopMoviesReducer = (state, action) => {
   return JSON.parse(JSON.stringify(state));
 }
 
-export default populateListOfTopMoviesReducer;
+export default movieReducer;

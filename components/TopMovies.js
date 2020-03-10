@@ -131,17 +131,6 @@ class TopMovies extends React.Component {
           title="View Favorites"
           onPress={ () => this.viewFavorites() } />
 
-        {/*
-        <Button 
-          title="Debug Favorites"
-          onPress={ () => this.debugFavorites() } />
-
-        <Button 
-          title="Debug Redux Store"
-          onPress={ () => this.debugReduxStore() } />
-        */}
-        
-
         <FlatList
           data={this.props.topMovies} 
           renderItem={ ({item}) => 
@@ -159,8 +148,7 @@ class TopMovies extends React.Component {
 
 const mapStateToProps = (state) => {
   return { 
-    topMovies: state.topMoviesStore.topMovies,
-    favoriteMovies: state.favoriteMoviesStore.favoriteMovies,
+    topMovies: state.topMovies
   };
 };
 const mapDispatchToProps = (dispatch) => {
