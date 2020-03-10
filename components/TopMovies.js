@@ -13,6 +13,8 @@ import {
 
 // TheMovieDB.org Discover Endpoint Reference: https://www.themoviedb.org/documentation/api/discover
 
+// NOTE: apikey.js is included in the .gitignore file and is hidden from this repo.
+// Create your own apikey.js file to store your keys. Name your keys API_KEY and ACCESS_TOKEN
 import { 
   API_KEY, 
   ACCESS_TOKEN 
