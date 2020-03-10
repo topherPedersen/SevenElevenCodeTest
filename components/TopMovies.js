@@ -135,6 +135,7 @@ class TopMovies extends React.Component {
           </View>
 
           <View style={{flex: 85}}>
+
             <FlatList
               data={this.props.topMovies} 
               renderItem={ ({item}) => 
@@ -143,6 +144,7 @@ class TopMovies extends React.Component {
                   isFavorite={item.isFavorite} />
               }
               keyExtractor={ item => item.id } />
+
           </View>
 
           <View style={{flex: 15}}>
