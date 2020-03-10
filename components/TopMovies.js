@@ -112,7 +112,7 @@ class TopMovies extends React.Component {
           title="View Favorites"
           onPress={ () => this.viewFavorites() } />
 
-        {/*
+        
         <Button 
           title="Debug Favorites"
           onPress={ () => this.debugFavorites() } />
@@ -120,12 +120,14 @@ class TopMovies extends React.Component {
         <Button 
           title="Debug Redux Store"
           onPress={ () => this.debugReduxStore() } />
-        */}
+        
 
         <FlatList
           data={this.props.topMovies} 
           renderItem={ ({item}) => 
-            <Movie title={item.title} />
+            <Movie 
+              title={item.title} 
+              isFavorite={item.isFavorite} />
           }
           keyExtractor={ item => item.id } />
 

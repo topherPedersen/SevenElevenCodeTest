@@ -23,6 +23,7 @@ const populateListOfTopMoviesReducer = (state, action) => {
     };
     return JSON.parse(JSON.stringify(newState));
   } else if (action.type === TOGGLE_FAVORITE) {
+    alert("TOGGLE FAVORITE!");
     // todo: toggle favorite
     const movieTitle = action.payload;
     const newState = JSON.parse(JSON.stringify(state));
