@@ -46,7 +46,7 @@ class Movie extends React.Component {
 
         <View style={{flex: 33, backgroundColor: "white"}}>
           <Button 
-            title={ this.props.isFavorite ? "REMOVE FROM FAVORITES" : "ADD TO FAVORITES" } 
+            title={ this.props.isFavorite ? "     X      " : "FAVORITE" } 
             onPress={ () => this.props.toggleFavorite(this.props.title) } />
         </View>
 
