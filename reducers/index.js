@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import addTopMoviesReducer from './addTopMoviesReducer';
+import populateListOfTopMoviesReducer from './populateListOfTopMoviesReducer';
 import otherReducer from './otherReducer';
 
 export default combineReducers({
-  topMoviesStore: addTopMoviesReducer,
+  topMoviesStore: populateListOfTopMoviesReducer,
   otherStore: otherReducer,
 });

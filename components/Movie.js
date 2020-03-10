@@ -13,7 +13,7 @@ import {
 
 // Redux
 import { connect } from 'react-redux';
-import { ADD_TOP_MOVIES } from '../actions/types';
+import { POPULATE_LIST_OF_TOP_MOVIES } from '../actions/types';
 
 // Shorten Title Utility
 const truncateTitle = (title, maxLength) => {
@@ -52,7 +52,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    addTopMovies: (topMoviesPayload) => dispatch({type: ADD_TOP_MOVIES, payload: topMoviesPayload})
+    populateListOfTopMovies: (topMoviesPayload) => dispatch({type: POPULATE_LIST_OF_TOP_MOVIES, payload: topMoviesPayload})
   };
 };
 

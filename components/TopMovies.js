@@ -26,7 +26,7 @@ import Movie from './Movie';
 
 // Redux
 import { connect } from 'react-redux';
-import { ADD_TOP_MOVIES } from '../actions/types';
+import { POPULATE_LIST_OF_TOP_MOVIES } from '../actions/types';
 
 class TopMovies extends React.Component {
   constructor(props) {
@@ -61,7 +61,7 @@ class TopMovies extends React.Component {
         });
 
         // Dispatch an action to add the topMovies to our Redux Store
-        this.props.addTopMovies(topMovies);
+        this.props.populateListOfTopMovies(topMovies);
 
       });
   }
@@ -121,7 +121,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    addTopMovies: (topMoviesPayload) => dispatch({type: ADD_TOP_MOVIES, payload: topMoviesPayload})
+    populateListOfTopMovies: (topMoviesPayload) => dispatch({type: POPULATE_LIST_OF_TOP_MOVIES, payload: topMoviesPayload})
   };
 };
 
