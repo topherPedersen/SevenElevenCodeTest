@@ -9,7 +9,20 @@ import {
   Button,
 } from 'react-native';
 
+// Redux
+import { createStore } from 'redux';
+import { 
+  connect, 
+  Provider, 
+} from 'react-redux';
+
+// Redux Actions & Reducers
+import addTopMoviesReducer from './reducers/addTopMoviesReducer';
+import { ADD_TOP_MOVIES } from './actions/types';
+
 import TopMovies from './components/TopMovies';
+
+const store = createStore(addTopMoviesReducer)
 
 class App extends React.Component {
   constructor(props) {
@@ -18,11 +31,11 @@ class App extends React.Component {
 
   render() {
     return(
-      <SafeAreaView>
+      <Provider store={store}>
 
         <TopMovies/>
 
-      </SafeAreaView>
+      </Provider>
     );
   }
 }

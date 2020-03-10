@@ -54,15 +54,16 @@ class TopMovies extends React.Component {
 
   render() {
     return(
-      <View>
+      <SafeAreaView>
 
         <Text>Top Movies...</Text>
+        <Text>feat. Redux!</Text>
 
         <Button
           title="Fetch Movie Data"
           onPress={ () => this.fetchMovieData() }/>
 
-      </View>
+      </SafeAreaView>
     );
   }
 }
