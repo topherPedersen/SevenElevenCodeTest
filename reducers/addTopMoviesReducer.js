@@ -16,7 +16,7 @@ const addTopMoviesReducer = (state, action) => {
 
   if (action.type === ADD_TOP_MOVIES) {
     const newState = {
-      topMovies: action.payload.persons,
+      topMovies: action.payload
     };
     return JSON.parse(JSON.stringify(newState));
   }

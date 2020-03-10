@@ -8,6 +8,7 @@ import {
   StatusBar,
   Button,
   ActivityIndicator,
+  FlatList,
 } from 'react-native';
 
 // The MovieDB JavaScript Libraries Recommended by The MovieDB
@@ -49,16 +50,18 @@ class TopMovies extends React.Component {
       })
       .then((data) => {
 
-        // const dataStr = JSON.stringify(data);
-        // alert(dataStr)
+        // Create an array of topMovies
         topMovies = data.results.map( (result) => { 
-          return result.original_title;
+          return {
+            title: result.original_title,
+            id: Math.random().toString(),
+          };
         });
 
-        alert(topMovies[0]);
+        // Dispatch an action to add the topMovies to our Redux Store
+        this.props.addTopMovies(topMovies);
 
       });
-      // .then(alert(topMovies[0]));
   }
 
   render() {
@@ -84,7 +87,12 @@ class TopMovies extends React.Component {
 
         <Text>Top Movies...</Text>
 
-        <Text>TODO: Add a FlatList and wire it up to our Redux store</Text>
+        <FlatList
+          data={this.props.topMovies} 
+          renderItem={ ({item}) => 
+            <Text>{item.title}</Text>
+          }
+          keyExtractor={ item => item.id } />
 
       </SafeAreaView>
     );
