@@ -73,8 +73,8 @@ class TopMovies extends React.Component {
 
     // If we have not yet retrieved any data from the Movie DB API,
     // display a loading spinner (Activity Indicator)
-    /*
-    if(this.props.topMoviesStore.topMovies.length < 1) {
+    
+    if(this.props.topMovies.length < 1) {
       return(
         <SafeAreaView>
 
@@ -85,8 +85,8 @@ class TopMovies extends React.Component {
         </SafeAreaView>
       );
     }
-    */
-
+    
+    /*
     if(true) {
       return(
         <SafeAreaView>
@@ -102,6 +102,7 @@ class TopMovies extends React.Component {
         </SafeAreaView>
       );
     }
+    */
 
     // If we have retrieved our list of top movies from the Movie DB API,
     // display those movies in a FlatList...
