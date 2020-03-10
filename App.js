@@ -17,12 +17,13 @@ import {
 } from 'react-redux';
 
 // Redux Actions & Reducers
-import addTopMoviesReducer from './reducers/addTopMoviesReducer';
-import { ADD_TOP_MOVIES } from './actions/types';
+// import addTopMoviesReducer from './reducers/addTopMoviesReducer';
+import rootReducer from './reducers';
+import { ADD_TOP_MOVIES, OTHER } from './actions/types';
 
 import TopMovies from './components/TopMovies';
 
-const store = createStore(addTopMoviesReducer)
+const store = createStore(rootReducer);
 
 class App extends React.Component {
   constructor(props) {

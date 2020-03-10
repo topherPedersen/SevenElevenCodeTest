@@ -68,7 +68,21 @@ class TopMovies extends React.Component {
 
     // If we have not yet retrieved any data from the Movie DB API,
     // display a loading spinner (Activity Indicator)
-    if(this.props.topMovies.length < 1) {
+    /*
+    if(this.props.topMoviesStore.topMovies.length < 1) {
+      return(
+        <SafeAreaView>
+
+          <Text>Top Movies...</Text>
+
+          <ActivityIndicator size="large" color="#0000ff" />
+
+        </SafeAreaView>
+      );
+    }
+    */
+
+    if(true) {
       return(
         <SafeAreaView>
 
@@ -87,12 +101,14 @@ class TopMovies extends React.Component {
 
         <Text>Top Movies...</Text>
 
+        {/*
         <FlatList
-          data={this.props.topMovies} 
+          data={this.props.topMoviesStore.topMovies} 
           renderItem={ ({item}) => 
             <Text>{item.title}</Text>
           }
           keyExtractor={ item => item.id } />
+        */}
 
       </SafeAreaView>
     );
@@ -101,7 +117,7 @@ class TopMovies extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { topMovies: state.topMovies };
+  return { topMovies: state.topMoviesStore.topMovies };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
