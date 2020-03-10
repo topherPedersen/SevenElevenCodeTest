@@ -16,7 +16,10 @@ import {
   StatusBar,
 } from 'react-native';
 
-import { API_KEY } from './apikey.js';
+import { 
+  API_KEY, 
+  ACCESS_TOKEN 
+} from './apikey.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,6 +31,7 @@ class App extends React.Component {
       <SafeAreaView>
         <Text>7-Eleven Code Test</Text>
         <Text>{API_KEY}</Text>
+        <Text>{ACCESS_TOKEN}</Text>
       </SafeAreaView>
     );
   }
