@@ -78,10 +78,27 @@ class TopMovies extends React.Component {
   }
 
   viewFavorites() {
-    // alert("View Favorites!");
-    const favoriteMovies = this.props.favoriteMovies;
-    const favoriteMoviesStr = JSON.stringify(favoriteMovies);
-    alert(favoriteMoviesStr);
+
+    // Get list of top movies
+    const topMovies = this.props.topMovies;
+
+    // Loop through list of top movies to identify 
+    // which movies have been added to the favorites list
+    let numberOfMoviesFavorited = 0;
+    let favoriteMoviesStr = "";
+    for (var i = 0; i < topMovies.length; i++) {
+      if (topMovies[i].isFavorite) {
+        favoriteMoviesStr += topMovies[i].title + "\n";
+        numberOfMoviesFavorited++;
+      }
+    }
+
+    // Display an alert dialog containing the list of favorite movies
+    if (numberOfMoviesFavorited > 0) {
+      alert(favoriteMoviesStr);
+    } else {
+      alert("No Movies Added to Favorites");
+    }
   }
 
   render() {
