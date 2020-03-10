@@ -27,6 +27,8 @@ class App extends React.Component {
 
   fetchMovieData() {
 
+    let topMovies;
+
     // Construct our MovieDB Endpoint URL and Add HTTP GET Request Parameters
     let URL = 'https://api.themoviedb.org/3/discover/movie';
     URL = URL + '?api_key=' + API_KEY;
@@ -37,9 +39,17 @@ class App extends React.Component {
         return response.json();
       })
       .then((data) => {
-        const dataStr = JSON.stringify(data);
-        alert(dataStr)
+
+        // const dataStr = JSON.stringify(data);
+        // alert(dataStr)
+        topMovies = data.results.map( (result) => { 
+          return result.original_title;
+        });
+
+        alert(topMovies[0]);
+
       });
+      // .then(alert(topMovies[0]));
   }
 
   render() {
