@@ -1,4 +1,7 @@
-import { POPULATE_LIST_OF_TOP_MOVIES } from '../actions/types';
+import { 
+  POPULATE_LIST_OF_TOP_MOVIES,
+  TOGGLE_FAVORITE,
+} from '../actions/types';
 
 const initialState = {
   topMovies: []
@@ -18,6 +21,20 @@ const populateListOfTopMoviesReducer = (state, action) => {
     const newState = {
       topMovies: action.payload
     };
+    return JSON.parse(JSON.stringify(newState));
+  } else if (action.type === TOGGLE_FAVORITE) {
+    // todo: toggle favorite
+    const movieTitle = action.payload;
+    const newState = JSON.parse(JSON.stringify(state));
+    // Loop through our list of topMovies until we identify
+    // the title we are searching for. After we find the title
+    // for which we are looking, toggle the state of "isFavorite".
+    for (var i = 0; i < newState.topMovies.length; i++) {
+      if (movieTitle === newState.topMovies[i].title) {
+        // toggle isFavorite state
+        newState.topMovies[i].isFavorite = !newState.topMovies[i].isFavorite;
+      }
+    }
     return JSON.parse(JSON.stringify(newState));
   }
 

@@ -57,6 +57,7 @@ class TopMovies extends React.Component {
           return {
             title: result.original_title,
             id: Math.random().toString(),
+            isFavorite: false,
           };
         });
 

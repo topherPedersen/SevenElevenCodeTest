@@ -15,6 +15,7 @@ import {
 import { connect } from 'react-redux';
 import { 
   POPULATE_LIST_OF_TOP_MOVIES,
+  TOGGLE_FAVORITE,
   ADD_MOVIE_TO_FAVORITES,
   REMOVE_MOVIE_FROM_FAVORITES,
 } from '../actions/types';
@@ -36,18 +37,6 @@ class Movie extends React.Component {
 
   render() {
 
-    // Determine if this movie is a favorite, not a favorite
-    let isFavoriteMovie = false;
-    // Loop through list of favorite movies...
-    for (var i = 0; i < this.props.favoriteMovies; i++) {
-      // If the title of the movie matches a title from the favoriteMovies list,
-      // flag this movie as a favorite by setting the isFavoriteMovie variable 
-      // to true
-      if (this.props.title === this.props.favoriteMovies.title) {
-        isFavoriteMovie = true;
-      }
-    }
-
     return(
       <View style={{flex: 1, flexDirection: 'row'}}>
 
@@ -57,8 +46,8 @@ class Movie extends React.Component {
 
         <View style={{flex: 33, backgroundColor: "white"}}>
           <Button 
-            title={ isFavoriteMovie ? "REMOVE FROM FAVORITES" : "ADD TO FAVORITES" } 
-            onPress={ () => this.props.addMovieToFavorites(this.props.title) } />
+            title={ this.props.isFavorite ? "REMOVE FROM FAVORITES" : "ADD TO FAVORITES" } 
+            onPress={ () => this.props.toggleFavorite(this.props.title) } />
         </View>
 
       </View>
@@ -74,6 +63,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
+    toggleFavorite: (payload) => dispatch({type: TOGGLE_FAVORITE, payload: payload}),
     addMovieToFavorites: (payload) => dispatch({type: ADD_MOVIE_TO_FAVORITES, payload: payload}),
     removeMovieFromFavorites: (payload) => dispatch({type: REMOVE_MOVIE_FROM_FAVORITES, payload: payload}),
   };

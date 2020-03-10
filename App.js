@@ -21,6 +21,7 @@ import {
 import rootReducer from './reducers';
 import { 
   POPULATE_LIST_OF_TOP_MOVIES, 
+  TOGGLE_FAVORITE,
   ADD_MOVIE_TO_FAVORITES, 
   REMOVE_MOVIE_FROM_FAVORITES 
 } from './actions/types';
