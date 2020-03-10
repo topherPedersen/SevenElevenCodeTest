@@ -13,7 +13,11 @@ import {
 
 // Redux
 import { connect } from 'react-redux';
-import { POPULATE_LIST_OF_TOP_MOVIES } from '../actions/types';
+import { 
+  POPULATE_LIST_OF_TOP_MOVIES,
+  ADD_MOVIE_TO_FAVORITES,
+  REMOVE_MOVIE_FROM_FAVORITES,
+} from '../actions/types';
 
 // Shorten Title Utility
 const truncateTitle = (title, maxLength) => {
@@ -39,7 +43,9 @@ class Movie extends React.Component {
         </View>
 
         <View style={{flex: 33, backgroundColor: "white"}}>
-          <Button title="Favorite" />
+          <Button 
+            title="Favorite" 
+            onPress={ () => this.props.addMovieToFavorites(this.props.title) } />
         </View>
 
       </View>
@@ -55,8 +61,8 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    addMovieToFavorites: (payload) => dispatch({type: POPULATE_LIST_OF_TOP_MOVIES, payload: payload}),
-    removeMovieFromFavorites: (payload) => dispatch({type: POPULATE_LIST_OF_TOP_MOVIES, payload: payload}),
+    addMovieToFavorites: (payload) => dispatch({type: ADD_MOVIE_TO_FAVORITES, payload: payload}),
+    removeMovieFromFavorites: (payload) => dispatch({type: REMOVE_MOVIE_FROM_FAVORITES, payload: payload}),
   };
 };
 
