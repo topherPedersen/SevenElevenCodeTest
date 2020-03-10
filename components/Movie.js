@@ -48,11 +48,15 @@ class Movie extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { topMovies: state.topMoviesStore.topMovies };
+  return { 
+    topMovies: state.topMoviesStore.topMovies,
+    favoriteMovies: state.favoriteMoviesStore.favoriteMovies,
+  };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    populateListOfTopMovies: (topMoviesPayload) => dispatch({type: POPULATE_LIST_OF_TOP_MOVIES, payload: topMoviesPayload})
+    addMovieToFavorites: (payload) => dispatch({type: POPULATE_LIST_OF_TOP_MOVIES, payload: payload}),
+    removeMovieFromFavorites: (payload) => dispatch({type: POPULATE_LIST_OF_TOP_MOVIES, payload: payload}),
   };
 };
 

@@ -72,7 +72,10 @@ class TopMovies extends React.Component {
   }
 
   viewFavorites() {
-    alert("View Favorites!");
+    // alert("View Favorites!");
+    const favoriteMovies = this.props.favoriteMovies;
+    const favoriteMoviesStr = JSON.stringify(favoriteMovies);
+    alert(favoriteMoviesStr);
   }
 
   render() {
@@ -117,7 +120,10 @@ class TopMovies extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { topMovies: state.topMoviesStore.topMovies };
+  return { 
+    topMovies: state.topMoviesStore.topMovies,
+    favoriteMovies: state.favoriteMoviesStore.favoriteMovies,
+  };
 };
 const mapDispatchToProps = (dispatch) => {
   return {

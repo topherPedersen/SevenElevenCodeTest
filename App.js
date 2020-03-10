@@ -19,7 +19,11 @@ import {
 // Redux Actions & Reducers
 // import addTopMoviesReducer from './reducers/addTopMoviesReducer';
 import rootReducer from './reducers';
-import { POPULATE_LIST_OF_TOP_MOVIES, OTHER } from './actions/types';
+import { 
+  POPULATE_LIST_OF_TOP_MOVIES, 
+  ADD_MOVIE_TO_FAVORITES, 
+  REMOVE_MOVIE_FROM_FAVORITES 
+} from './actions/types';
 
 import TopMovies from './components/TopMovies';
 
@@ -33,9 +37,7 @@ class App extends React.Component {
   render() {
     return(
       <Provider store={store}>
-
         <TopMovies/>
-
       </Provider>
     );
   }
