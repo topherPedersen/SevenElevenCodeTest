@@ -15,6 +15,16 @@ import {
 import { connect } from 'react-redux';
 import { ADD_TOP_MOVIES } from '../actions/types';
 
+// Shorten Title Utility
+const truncateTitle = (title, maxLength) => {
+    if (title.length > maxLength) {
+      const truncatedTitle = title.slice(0, maxLength - 3) + "...";
+      return title.slice(0, maxLength - 3) + "...";
+    } else {
+      return title;
+    }
+};
+
 class Movie extends React.Component {
   constructor(props) {
     super(props)
@@ -25,7 +35,7 @@ class Movie extends React.Component {
       <View style={{flex: 1, flexDirection: 'row'}}>
 
         <View style={{flex: 67, backgroundColor: "white"}}>
-          <Text>{this.props.title}</Text>
+          <Text>{truncateTitle(this.props.title, 25)}</Text>
         </View>
 
         <View style={{flex: 33, backgroundColor: "white"}}>
