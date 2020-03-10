@@ -64,6 +64,11 @@ class TopMovies extends React.Component {
       });
   }
 
+  debugReduxStore() {
+    let propStr = JSON.stringify(this.props);
+    alert(propStr);
+  }
+
   render() {
 
     // If we have not yet retrieved any data from the Movie DB API,
@@ -89,6 +94,10 @@ class TopMovies extends React.Component {
           <Text>Top Movies...</Text>
 
           <ActivityIndicator size="large" color="#0000ff" />
+
+          <Button 
+            title="Debug Redux Store"
+            onPress={ () => this.debugReduxStore() }/>
 
         </SafeAreaView>
       );
