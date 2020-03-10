@@ -71,6 +71,10 @@ class TopMovies extends React.Component {
     alert(propStr);
   }
 
+  viewFavorites() {
+    alert("View Favorites!");
+  }
+
   render() {
 
     // If we have not yet retrieved any data from the Movie DB API,
@@ -94,6 +98,10 @@ class TopMovies extends React.Component {
       <SafeAreaView>
 
         <Text>Top Movies...</Text>
+
+        <Button 
+          title="View Favorites"
+          onPress={ () => this.viewFavorites() } />
 
         <FlatList
           data={this.props.topMovies} 
