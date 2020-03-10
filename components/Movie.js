@@ -35,6 +35,19 @@ class Movie extends React.Component {
   }
 
   render() {
+
+    // Determine if this movie is a favorite, not a favorite
+    let isFavoriteMovie = false;
+    // Loop through list of favorite movies...
+    for (var i = 0; i < this.props.favoriteMovies; i++) {
+      // If the title of the movie matches a title from the favoriteMovies list,
+      // flag this movie as a favorite by setting the isFavoriteMovie variable 
+      // to true
+      if (this.props.title === this.props.favoriteMovies.title) {
+        isFavoriteMovie = true;
+      }
+    }
+
     return(
       <View style={{flex: 1, flexDirection: 'row'}}>
 
@@ -44,7 +57,7 @@ class Movie extends React.Component {
 
         <View style={{flex: 33, backgroundColor: "white"}}>
           <Button 
-            title="Favorite" 
+            title={ isFavoriteMovie ? "REMOVE FROM FAVORITES" : "ADD TO FAVORITES" } 
             onPress={ () => this.props.addMovieToFavorites(this.props.title) } />
         </View>
 
