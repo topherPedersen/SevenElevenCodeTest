@@ -112,7 +112,7 @@ class TopMovies extends React.Component {
       return(
         <SafeAreaView>
 
-        <View style={{flex: 15}}>
+        <View style={{flex: 15, justifyContent: 'center'}}>
           <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test????</Text>
         </View>
 
@@ -130,7 +130,7 @@ class TopMovies extends React.Component {
       <SafeAreaView style={{flex: 1, backgroundColor: "purple"}}>
         <View style={{flex: 1, backgroundColor: "orange"}}>
 
-          <View style={{flex: 15, backgroundColor: "yellow"}}>
+          <View style={{flex: 15, backgroundColor: "yellow", justifyContent: 'center'}}>
             <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test!</Text>
           </View>
 
@@ -147,7 +147,7 @@ class TopMovies extends React.Component {
 
           </View>
 
-          <View style={{flex: 15}}>
+          <View style={{flex: 15, justifyContent: 'center'}}>
             <Button 
               title="View Favorites"
               onPress={ () => this.viewFavorites() } />
