@@ -22,8 +22,16 @@ class Movie extends React.Component {
 
   render() {
     return(
-      <View>
-        <Text>TITLE: {this.props.title}</Text>
+      <View style={{flex: 1, flexDirection: 'row'}}>
+
+        <View style={{flex: 67, backgroundColor: "white"}}>
+          <Text>{this.props.title}</Text>
+        </View>
+
+        <View style={{flex: 33, backgroundColor: "white"}}>
+          <Button title="Favorite" />
+        </View>
+
       </View>
     );
   }
