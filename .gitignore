@@ -2,6 +2,9 @@
 #
 .DS_Store
 
+# The Movie DB API Key
+apikey.js
+
 # Xcode
 #
 build/
