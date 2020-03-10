@@ -71,6 +71,11 @@ class TopMovies extends React.Component {
     alert(propStr);
   }
 
+  debugFavorites() {
+    let propStr = JSON.stringify(this.props.favoriteMovies);
+    alert(propStr);
+  }
+
   viewFavorites() {
     // alert("View Favorites!");
     const favoriteMovies = this.props.favoriteMovies;
@@ -105,6 +110,14 @@ class TopMovies extends React.Component {
         <Button 
           title="View Favorites"
           onPress={ () => this.viewFavorites() } />
+
+        <Button 
+          title="Debug Favorites"
+          onPress={ () => this.debugFavorites() } />
+
+        <Button 
+          title="Debug Redux Store"
+          onPress={ () => this.debugReduxStore() } />
 
         <FlatList
           data={this.props.topMovies} 
