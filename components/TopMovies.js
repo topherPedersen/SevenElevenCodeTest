@@ -112,9 +112,13 @@ class TopMovies extends React.Component {
       return(
         <SafeAreaView>
 
-          <Text>Top Movies...</Text>
+        <View style={{flex: 15}}>
+          <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test</Text>
+        </View>
 
+        <View style={{flex: 85}}>
           <ActivityIndicator size="large" color="#0000ff" />
+        </View>
 
         </SafeAreaView>
       );
@@ -124,22 +128,30 @@ class TopMovies extends React.Component {
     // display those movies in a FlatList...
     return(
       <SafeAreaView>
+        <View style={{flex: 1}}>
 
-        <Text>Top Movies...</Text>
+          <View style={{flex: 15}}>
+            <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test</Text>
+          </View>
 
-        <Button 
-          title="View Favorites"
-          onPress={ () => this.viewFavorites() } />
+          <View style={{flex: 85}}>
+            <FlatList
+              data={this.props.topMovies} 
+              renderItem={ ({item}) => 
+                <Movie 
+                  title={item.title} 
+                  isFavorite={item.isFavorite} />
+              }
+              keyExtractor={ item => item.id } />
+          </View>
 
-        <FlatList
-          data={this.props.topMovies} 
-          renderItem={ ({item}) => 
-            <Movie 
-              title={item.title} 
-              isFavorite={item.isFavorite} />
-          }
-          keyExtractor={ item => item.id } />
+          <View style={{flex: 15}}>
+            <Button 
+              title="View Favorites"
+              onPress={ () => this.viewFavorites() } />
+          </View>
 
+        </View>
       </SafeAreaView>
     );
 
