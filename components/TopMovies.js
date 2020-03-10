@@ -85,24 +85,6 @@ class TopMovies extends React.Component {
         </SafeAreaView>
       );
     }
-    
-    /*
-    if(true) {
-      return(
-        <SafeAreaView>
-
-          <Text>Top Movies...</Text>
-
-          <ActivityIndicator size="large" color="#0000ff" />
-
-          <Button 
-            title="Debug Redux Store"
-            onPress={ () => this.debugReduxStore() }/>
-
-        </SafeAreaView>
-      );
-    }
-    */
 
     // If we have retrieved our list of top movies from the Movie DB API,
     // display those movies in a FlatList...
@@ -111,14 +93,12 @@ class TopMovies extends React.Component {
 
         <Text>Top Movies...</Text>
 
-        {/*
         <FlatList
-          data={this.props.topMoviesStore.topMovies} 
+          data={this.props.topMovies} 
           renderItem={ ({item}) => 
             <Text>{item.title}</Text>
           }
           keyExtractor={ item => item.id } />
-        */}
 
       </SafeAreaView>
     );
