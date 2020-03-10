@@ -113,7 +113,7 @@ class TopMovies extends React.Component {
         <SafeAreaView>
 
         <View style={{flex: 15}}>
-          <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test</Text>
+          <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test????</Text>
         </View>
 
         <View style={{flex: 85}}>
@@ -127,11 +127,11 @@ class TopMovies extends React.Component {
     // If we have retrieved our list of top movies from the Movie DB API,
     // display those movies in a FlatList...
     return(
-      <SafeAreaView>
-        <View style={{flex: 1}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: "purple"}}>
+        <View style={{flex: 1, backgroundColor: "orange"}}>
 
-          <View style={{flex: 15}}>
-            <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test</Text>
+          <View style={{flex: 15, backgroundColor: "yellow"}}>
+            <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test!</Text>
           </View>
 
           <View style={{flex: 85}}>
