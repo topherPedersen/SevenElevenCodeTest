@@ -94,15 +94,20 @@ class TopMovies extends React.Component {
     
     if(this.props.topMovies.length < 1) {
       return(
-        <SafeAreaView>
+        <SafeAreaView style={{flex: 1}}>
 
-        <View style={{flex: 10, justifyContent: 'center'}}>
-          <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test</Text>
-        </View>
+          <View style={{flex: 1}}>
 
-        <View style={{flex: 90}}>
-          <ActivityIndicator size="large" color="#0000ff" />
-        </View>
+
+            <View style={{flex: 10, justifyContent: 'center'}}>
+              <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test</Text>
+            </View>
+
+            <View style={{flex: 90, justifyContent: 'center'}}>
+              <ActivityIndicator size="large" color="#0000ff" />
+            </View>
+
+          </View>
 
         </SafeAreaView>
       );
