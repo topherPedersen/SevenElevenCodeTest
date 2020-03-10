@@ -20,6 +20,10 @@ import {
   ACCESS_TOKEN 
 } from '../apikey.js';
 
+// Redux
+import { connect } from 'react-redux';
+import { ADD_TOP_MOVIES } from '../actions/types';
+
 class TopMovies extends React.Component {
   constructor(props) {
     super(props)
@@ -68,4 +72,13 @@ class TopMovies extends React.Component {
   }
 }
 
-export default TopMovies;
+const mapStateToProps = (state) => {
+  return { topMovies: state.topMovies };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addTopMovies: (topMoviesPayload) => dispatch({type: ADD_TOP_MOVIES, payload: topMoviesPayload})
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TopMovies);
