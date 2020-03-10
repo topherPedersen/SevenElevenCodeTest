@@ -17,7 +17,6 @@ import {
 } from 'react-redux';
 
 // Redux Actions & Reducers
-// import addTopMoviesReducer from './reducers/addTopMoviesReducer';
 import movieReducer from './reducers/movieReducer';
 import { 
   POPULATE_LIST_OF_TOP_MOVIES, 

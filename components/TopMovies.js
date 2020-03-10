@@ -11,11 +11,7 @@ import {
   FlatList,
 } from 'react-native';
 
-// The MovieDB JavaScript Libraries Recommended by The MovieDB
-// https://github.com/EtienneWan/tmdb-js/
-// https://github.com/cavestri/themoviedb-javascript-library/
-
-// Discover Endpoint Reference: https://www.themoviedb.org/documentation/api/discover
+// TheMovieDB.org Discover Endpoint Reference: https://www.themoviedb.org/documentation/api/discover
 
 import { 
   API_KEY, 
@@ -67,18 +63,6 @@ class TopMovies extends React.Component {
       });
   }
 
-  /*
-  debugReduxStore() {
-    let propStr = JSON.stringify(this.props);
-    alert(propStr);
-  }
-
-  debugFavorites() {
-    let propStr = JSON.stringify(this.props.favoriteMovies);
-    alert(propStr);
-  }
-  */
-
   viewFavorites() {
 
     // Get list of top movies
@@ -112,11 +96,11 @@ class TopMovies extends React.Component {
       return(
         <SafeAreaView>
 
-        <View style={{flex: 15, justifyContent: 'center'}}>
-          <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test????</Text>
+        <View style={{flex: 10, justifyContent: 'center'}}>
+          <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test</Text>
         </View>
 
-        <View style={{flex: 85}}>
+        <View style={{flex: 90}}>
           <ActivityIndicator size="large" color="#0000ff" />
         </View>
 
@@ -127,14 +111,14 @@ class TopMovies extends React.Component {
     // If we have retrieved our list of top movies from the Movie DB API,
     // display those movies in a FlatList...
     return(
-      <SafeAreaView style={{flex: 1, backgroundColor: "purple"}}>
-        <View style={{flex: 1, backgroundColor: "orange"}}>
+      <SafeAreaView style={{flex: 1}}>
+        <View style={{flex: 1}}>
 
-          <View style={{flex: 15, backgroundColor: "yellow", justifyContent: 'center'}}>
-            <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test!</Text>
+          <View style={{flex: 10, justifyContent: 'center'}}>
+            <Text style={{textAlign: 'center', marginTop: 15, marginBottom: 15}}>7-Eleven Code Test</Text>
           </View>
 
-          <View style={{flex: 85}}>
+          <View style={{flex: 80}}>
 
             <FlatList
               data={this.props.topMovies} 
@@ -147,7 +131,7 @@ class TopMovies extends React.Component {
 
           </View>
 
-          <View style={{flex: 15, justifyContent: 'center'}}>
+          <View style={{flex: 10, justifyContent: 'center'}}>
             <Button 
               title="View Favorites"
               onPress={ () => this.viewFavorites() } />

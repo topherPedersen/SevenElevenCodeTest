@@ -7,8 +7,9 @@ const initialState = {
   topMovies: []
 };
 
-// The populateListOfTopMoviesReducer handles updating our redux store
-// whenever we receive new movie data from the the API. 
+// The movieReducer handles adding movies returned from 
+// TheMovieDB.org API to our Redux Store, and also handles adding 
+// movies to our "favorites list" via the TOGGLE_FAVORITE action
 const movieReducer = (state, action) => {
 
   // check for state undefined to prevent 
@@ -17,14 +18,14 @@ const movieReducer = (state, action) => {
     return JSON.parse(JSON.stringify(initialState));
   }
 
+  // Add movies to our Redux Store 
   if (action.type === POPULATE_LIST_OF_TOP_MOVIES) {
     const newState = {
       topMovies: action.payload
     };
     return JSON.parse(JSON.stringify(newState));
+  // Add or remove movie from favorites list
   } else if (action.type === TOGGLE_FAVORITE) {
-    // alert("TOGGLE FAVORITE!");
-    // todo: toggle favorite
     const movieTitle = action.payload;
     const newState = JSON.parse(JSON.stringify(state));
     // Loop through our list of topMovies until we identify
