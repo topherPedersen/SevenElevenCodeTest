@@ -19,11 +19,14 @@ const updateFavoriteMoviesReducer = (state, action) => {
 
   // Note: consider changing this to a switch statement
   // if many action types added
-  if (action.type === ADD_MOVIE_TO_FAVORITES) {
-    const newFavorite = action.payload;
+  if (action.type === ADD_MOVIE_TO_FAVORITES) {    
+    const newFavorite = { 
+      title: action.payload, 
+      id: Math.random().toString() 
+    };
     const newState = JSON.parse(JSON.stringify(state));
-    const indexOfNextMovie = newState.length;
-    newState[indexOfNextMovie] = newFavorite;
+    const indexOfNextMovie = newState.favoriteMovies.length;
+    newState.favoriteMovies[indexOfNextMovie] = newFavorite;
     return JSON.parse(JSON.stringify(newState));
   } else if (action.type === REMOVE_MOVIE_FROM_FAVORITES) {
     const newState = {
