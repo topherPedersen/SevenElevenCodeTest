@@ -7,6 +7,7 @@ import {
   Text,
   StatusBar,
   Button,
+  ActivityIndicator,
 } from 'react-native';
 
 // The MovieDB JavaScript Libraries Recommended by The MovieDB
@@ -57,18 +58,33 @@ class TopMovies extends React.Component {
   }
 
   render() {
+
+    // If we have not yet retrieved any data from the Movie DB API,
+    // display a loading spinner (Activity Indicator)
+    if(this.props.topMovies.length < 1) {
+      return(
+        <SafeAreaView>
+
+          <Text>Top Movies...</Text>
+
+          <ActivityIndicator size="large" color="#0000ff" />
+
+        </SafeAreaView>
+      );
+    }
+
+    // If we have retrieved our list of top movies from the Movie DB API,
+    // display those movies in a FlatList...
     return(
       <SafeAreaView>
 
         <Text>Top Movies...</Text>
-        <Text>feat. Redux!</Text>
 
-        <Button
-          title="Fetch Movie Data"
-          onPress={ () => this.fetchMovieData() }/>
+        <Text>TODO: Add a FlatList and wire it up to our Redux store</Text>
 
       </SafeAreaView>
     );
+
   }
 }
 
